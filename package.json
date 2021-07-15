@@ -1,0 +1,36 @@
+{
+  "name": "CompleteServer",
+  "version": "1.0.0",
+  "main": "./src/app.js",
+  "license": "MIT",
+
+  "scripts": {
+    "start": "node ./dist/main.js",
+    "heroku-postbuild": "webpack --mode production",
+    "lint": "eslint . --ext .js",
+    "lint-fix": "eslint . --ext .js --fix"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.12",
+    "nodemon-webpack-plugin": "^4.5.2",
+    "prettier": "^2.3.2",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
+    
+  }
+}
