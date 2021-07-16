@@ -3,17 +3,19 @@
   "version": "1.0.0",
   "main": "./src/app.js",
   "license": "MIT",
-
   "scripts": {
-    "start": "node ./dist/main.js",
-    "heroku-postbuild": "webpack --mode production",
+    "start": "node app.js",
+    "heroku-postbuild": "webpack --mode development",
     "lint": "eslint . --ext .js",
     "lint-fix": "eslint . --ext .js --fix"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "promise-mysql": "^5.0.3",
+    "util": "^0.12.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -31,6 +33,5 @@
     "prettier": "^2.3.2",
     "webpack": "^5.44.0",
     "webpack-cli": "^4.7.2"
-    
   }
 }

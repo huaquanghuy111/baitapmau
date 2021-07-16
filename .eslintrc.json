@@ -13,6 +13,11 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "consistent-return": "off",
+        "spaced-comment": "off",
+        "no-return-await": "off"
+
+        
     }
 }
