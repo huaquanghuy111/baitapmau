@@ -1,10 +1,11 @@
-import mysql from 'mysql'
+import Database from 'mysql-sync-query'
 
-const connection = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-})
+const dbObj = new Database(process.env.DATABASE)
+dbObj.connectLocal(
+  process.env.HOST,
+  process.env.DBPORT,
+  process.env.USER,
+  process.env.PASSWORD
+)
 
-export default connection
+export default dbObj

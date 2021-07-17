@@ -13,8 +13,12 @@
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "http-errors": "^1.8.0",
     "mysql": "^2.18.1",
+    "mysql-sync-query": "^1.0.4",
+    "mysql2": "^2.2.5",
     "promise-mysql": "^5.0.3",
+    "promise-mysql2": "^1.0.0",
     "util": "^0.12.4"
   },
   "devDependencies": {

@@ -1,17 +1,10 @@
-import util from 'util'
-import connection from '../connect'
+import dbObj from '../connect'
 
-const query = util.promisify(connection.query).bind(connection)
 const userController = {
-  async getAll(req, res) {
-    try{
-      const sql = 'SELECT * FROM userinfor'
-      const rows = await query(sql)
-      res.json(rows)
-    }
-    catch(err){
-      console.log(err)
-    }
+  async list(req, res) {
+    const rows = await dbObj.executeQuery('SELECT * FROM userinfor')
+
+    return res.json(rows)
   },
 }
 

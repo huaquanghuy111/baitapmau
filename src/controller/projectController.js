@@ -1,20 +1,13 @@
-import util from 'util'
-import connection from '../connect'
+import dbObj  from "../connect"
 
-const query = util.promisify(connection.query).bind(connection)
 const projectController = {
-  
-    async getAll(req, res) {
-      try{
-        const sql = 'SELECT * FROM project'
-        const rows = await query(sql)
-        res.json(rows)
-      }
-      catch(err){
-        console.log(err)
-      }
-    }
-  
+  async list(req, res) {
+    
+      const rows = await dbObj.executeQuery('SELECT * FROM project')
+      //const result = Object.values(JSON.parse(JSON.stringify(rows)))
+      return res.json(rows)
+    
+  },
 }
 
 export default projectController
