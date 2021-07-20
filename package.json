@@ -22,7 +22,8 @@
     "mysql2": "^2.2.5",
     "promise-mysql": "^5.0.3",
     "promise-mysql2": "^1.0.0",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "validatorjs": "^3.22.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",

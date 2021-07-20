@@ -4,7 +4,6 @@ import bodyParser from 'body-parser'
 import path from 'path'
 import router from './routes/router'
 
-
 const __dirname = path.resolve()
 const app = express()
 app.use(express.static(`${__dirname}/dist`))
@@ -20,15 +19,14 @@ app.use((req, res, next) => {
   next(error)
 })
 
-  
 
 app.use((err, req, res, next) => {
- res.status(err.status || 500)
- res.json({
-   err: {
-     message : err.message
-   }
- })
+  res.status(err.status || 500)
+  res.json({
+    err: {
+      message: err.message,
+    },
+  })
 })
 
 app.listen(port, () => console.log(`server is running on ${port}`))
