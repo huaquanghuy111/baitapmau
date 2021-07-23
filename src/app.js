@@ -22,8 +22,10 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500)
+  console.log(err)
   res.json({
     err: {
+      status: err.status,
       message: err.message,
     },
   })
