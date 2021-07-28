@@ -1,6 +1,6 @@
 import Validator from 'validatorjs'
 import creatError from 'http-errors'
-import dbObj from '../connect'
+import dbObj from '../config/database'
 import rules from '../validatorrules'
 
 const projectsController = {

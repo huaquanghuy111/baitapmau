@@ -7,8 +7,13 @@ const rules = {
         name: 'required',
         author: 'required'
     },
-
+    UpdateValidate: {
+        name: 'required',
+        age: ['integer', 'required']
+    },
+    
     UserValidate: {
+        id: 'required',
         name: 'required',
         age: ['integer', 'between: 0,100', 'required'],
         password: 'required'
