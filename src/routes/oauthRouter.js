@@ -26,10 +26,6 @@ oauthRouter.get(
   })
 )
 
-oauthRouter.get('/fail', (req, res) =>
-  res.send(`something went wrong, from : ${req.query.from}`)
-)
-
 oauthRouter.get('/logout', (req, res) => {
   req.logOut()
   res.send('goodbye')

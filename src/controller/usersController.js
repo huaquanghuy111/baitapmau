@@ -29,13 +29,12 @@ const usersController = {
     const { id, name, age, password } = req.body
     const validation = new Validator(req.body, rules.UserValidate)
     if (validation.fails()) {
-      const errormessagge = JSON.stringify(validation.errors.all())
-      throw createError(400, `${errormessagge}`)
+     return res.status(400).send(validation.errors.all())
     }
-    await dbObj.executeQuery(
+    return await dbObj.executeQuery(
       `INSERT INTO userinfor(id, name, age, password) VALUES ("${id}", "${name}", ${age}, "${password}")`
     )
-    return res.send('add user succesfully')
+    
   },
 
   async delete(req, res) {

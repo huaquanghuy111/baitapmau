@@ -16,7 +16,9 @@
         "no-underscore-dangle": "off",
         "consistent-return": "off",
         "spaced-comment": "off",
-        "no-return-await": "off"
+        "no-return-await": "off",
+        "object-shorthand": "off",
+        "no-shadow": "off"
 
         
     }

@@ -1,14 +1,13 @@
 import jwt from 'jsonwebtoken'
-import createError from 'http-errors'
 
 const secretKey = process.env.SCRETKEY
 const verifyToken = (req, res, next) => {
   const token = req.headers['authorization']
-  if (!token) throw createError(401, 'a token is required to authentication')
+  if (!token) return res.status(401).send('a token is required')
   try {
     jwt.verify(token, secretKey)
   } catch (err) {
-    throw createError(401, 'invalid token')
+    return res.status(401).send('invalid token')
   }
   return next()
 }

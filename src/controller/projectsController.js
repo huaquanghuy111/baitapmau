@@ -10,9 +10,9 @@ const projectsController = {
     return res.json(rows)
   },
   async show(req, res) {
-    const name = req.params.id
+    const {id} = req.params
     const rows = await dbObj.executeQuery(
-      `SELECT * FROM project WHERE name = "${name}"`
+      `SELECT * FROM project WHERE id = "${id}"`
     )
     return res.json(rows)
   },
@@ -23,7 +23,6 @@ const projectsController = {
     if (validation.fails()) {
       const errormess = JSON.stringify(validation.errors.all())
       throw creatError(400, `${errormess}`)
-
     }
     await dbObj.executeQuery(
       `INSERT INTO project(name, author) VALUES ("${name}", "${author}")`
@@ -31,18 +30,18 @@ const projectsController = {
     return res.send('add project successfully')
   },
   async delete(req, res) {
-    const name = req.params.id
+    const {id} = req.params
     const validation = new Validator(req.params, 'string')
     if (validation.fails()) {
       const errormess = JSON.stringify(validation.errors.all())
       throw creatError(400, `${errormess}`)
     }
-    await dbObj.executeQuery(`DELETE FROM project WHERE name = "${name}"`)
+    await dbObj.executeQuery(`DELETE FROM project WHERE id = "${id}"`)
     return res.send('remove successfully')
   },
 
   async update(req, res) {
-    const oldname = req.params.id
+    const {id} = req.params
     const { name, author } = req.body
     const validation = new Validator(req.body, 'string')
     if (validation.fails()) {
@@ -50,9 +49,9 @@ const projectsController = {
       throw creatError(400, `${errormess}`)
     }
     await dbObj.executeQuery(
-      `UPDATE project SET name = "${name}", author = "${author}" WHERE name = "${oldname}"`
+      `UPDATE project SET name = "${name}", author = "${author}" WHERE id = "${id}"`
     )
-   return res.send('update successfully')
+    return res.send('update successfully')
   },
 }
 

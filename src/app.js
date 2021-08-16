@@ -4,10 +4,12 @@ import bodyParser from 'body-parser'
 import session from 'express-session'
 import router from './routes/router'
 import oauthRouter from './routes/oauthRouter'
+import db from './models'
 
 const app = express()
 const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: false }))
+//db.sequelize.sync()
 app.use(session({ secret: process.env.SCRETKEY }))
 app.use(oauthRouter)
 app.use(router)
@@ -19,6 +21,7 @@ app.use((req, res, next) => {
   next(error)
 })
 app.use((err, req, res, next) => {
+  console.log(err)
   res.status(err.status || 500)
   res.json({
     err: {

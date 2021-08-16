@@ -1,6 +1,5 @@
-const path = require('path');
+const path = require('path')
 const NodemonPlugin = require('nodemon-webpack-plugin')
-
 
 module.exports = {
   entry: './src/app.js',
@@ -10,21 +9,12 @@ module.exports = {
     filename: 'main.js',
   },
   devtool: 'inline-source-map',
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: "babel-loader"
-        }
-    },
-    ]
-  },
+
   target: 'node',
- 
+
   watch: true,
   plugins: [
     new NodemonPlugin(), // Dong
   ],
-};
+  externals: ['pg', 'sqlite3', 'tedious', 'pg-hstore'],
+}
