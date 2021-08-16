@@ -2,11 +2,11 @@ const mysql2 = require('mysql2')
 
 module.exports = {
   development: {
-    username: process.env.USER || 'root',
-    password: process.env.PASSWORD || '',
-    database: process.env.DATABASE || 'user',
-    host: process.env.HOST || 'localhost',
-    port: process.env.DBPORT || 3306,
+    username: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
+    host: process.env.HOST,
+    port: process.env.DBPORT,
     dialect: 'mysql',
     dialectModule: mysql2
   },
