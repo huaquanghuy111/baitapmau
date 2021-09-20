@@ -1,6 +1,7 @@
 import passport from 'passport'
 
 const GoogleStrategy = require('passport-google-oauth2').Strategy
+
 passport.use(
   new GoogleStrategy(
     {
@@ -14,6 +15,7 @@ passport.use(
 )
 
 const FacebookStrategy = require('passport-facebook').Strategy
+
 passport.use(
   new FacebookStrategy(
     {

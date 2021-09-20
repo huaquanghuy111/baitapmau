@@ -5,7 +5,7 @@ const Project = db.projects
 const projects2Controller = {
   async index(req, res) {
     const rows = await Project.findAll({
-      attributes: ['name', 'userId'],
+      attributes: ['id','name', 'userId'],
     })
     return res.json(rows)
   },

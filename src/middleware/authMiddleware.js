@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 
 const secretKey = process.env.SCRETKEY
 const verifyToken = (req, res, next) => {
-  const token = req.headers['authorization']
+  const token = req.headers.authorization
   if (!token) return res.status(401).send('a token is required')
   try {
     jwt.verify(token, secretKey)

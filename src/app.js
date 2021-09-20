@@ -1,6 +1,7 @@
 import express from 'express'
 import {} from 'dotenv/config'
 import bodyParser from 'body-parser'
+import cors from 'cors'
 import session from 'express-session'
 import router from './routes/router'
 import oauthRouter from './routes/oauthRouter'
@@ -9,6 +10,7 @@ import db from './models'
 const app = express()
 const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cors())
 //db.sequelize.sync()
 app.use(session({ secret: process.env.SCRETKEY }))
 app.use(oauthRouter)

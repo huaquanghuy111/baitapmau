@@ -44,4 +44,7 @@ router.get('/projects', projects2Controller.index)
 router.get('/projects/:id', projects2Controller.showbyUserId)
 router.get('/project/all', User2Controller.showAllProjectbyUserId)
 
+//mail
+
+
 export default router

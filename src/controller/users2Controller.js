@@ -2,9 +2,10 @@ import { Op } from 'sequelize'
 import Validator from 'validatorjs'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
+import nodemailer from 'nodemailer'
 import db from '../models'
 
-const sequelize = db.sequelize
+const {sequelize} = db
 const User = db.users
 const Project = db.projects
 const secretKey = process.env.SCRETKEY
@@ -220,6 +221,8 @@ const User2Controller = {
     )
     return res.json(result)
   },
+
+  
 }
 
 export default User2Controller
