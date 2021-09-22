@@ -2,7 +2,6 @@ import { Op } from 'sequelize'
 import Validator from 'validatorjs'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
-import nodemailer from 'nodemailer'
 import db from '../models'
 
 const {sequelize} = db

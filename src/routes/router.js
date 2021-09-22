@@ -32,7 +32,7 @@ router.group('/private', auth, (router) => {
   router.post('/welcome', (req, res) => res.status(200).send('welcome'))
 })
 
-router.get('/', usersController.home)
+// router.get('/', usersController.home)
 router.get('/users', User2Controller.index)
 router.get('/users/:id', User2Controller.show)
 router.put('/users/:id',User2Controller.update)
@@ -43,6 +43,9 @@ router.post('/users/login', User2Controller.logIn)
 router.get('/projects', projects2Controller.index)
 router.get('/projects/:id', projects2Controller.showbyUserId)
 router.get('/project/all', User2Controller.showAllProjectbyUserId)
+
+// chat realtime
+
 
 //mail
 
